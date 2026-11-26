@@ -7,7 +7,7 @@ function InscricaoCurso() {
   const curso = cursos.find((item) => item.slug === slug);
 
   if (!curso) {
-    return <Navigate to="/inscricao" replace />;
+    return <Navigate to="/cursos" replace />;
   }
 
   return <InscricaoForm curso={curso} />;

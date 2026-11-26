@@ -18,9 +18,9 @@ import {
   ErrorText,
   SubmitButton,
   Feedback,
-} from "../../inscricao/styles/inscricao.styles";
+} from "../styles/inscricao.styles";
 import { seriesEscolares } from "../data/seriesEscolares";
-import { enviarInscricao } from "../../inscricao/services/enviarInscricao";
+import { enviarInscricao } from "../services/enviarInscricao";
 
 function criarEstadoInicial(curso) {
   const extras = {};
