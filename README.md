@@ -102,7 +102,8 @@ npm run preview
 ### Deploy atual
 
 ```md
-https://uniube-coders.vercel.app/
+https://uniube-coders.vercel.app/ (endereço antigo)
+https://uniube-coders-seven.vercel.app (endereço atual)
 ```
 
 ---
