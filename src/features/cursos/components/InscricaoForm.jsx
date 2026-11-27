@@ -2,8 +2,16 @@ import { useEffect, useState } from "react";
 import {
   PageWrapper,
   Hero,
+  HeroImage,
+  ImageCredit,
   Title,
   Subtitle,
+  Lessons,
+  LessonsTitle,
+  LessonList,
+  Lesson,
+  LessonTitle,
+  LessonText,
   FormSection,
   Form,
   Field,
@@ -63,6 +71,7 @@ function InscricaoForm({ curso = null }) {
   const [feedback, setFeedback] = useState(null);
 
   const camposExtras = curso?.camposExtras ?? [];
+  const aulas = curso?.aulas ?? [];
   const inscricoesAbertas = !curso || curso.status === "aberto";
 
   useEffect(() => {
@@ -208,13 +217,37 @@ function InscricaoForm({ curso = null }) {
   return (
     <PageWrapper>
       <Hero>
+        {curso?.imagem && (
+          <HeroImage src={curso.imagem} alt={curso.imagemAlt || ""} />
+        )}
         <Title>{curso ? curso.titulo : "Inscrição"}</Title>
         <Subtitle>
           {curso
             ? curso.resumo
             : "Preencha o formulário abaixo para participar das atividades do Uniube Coders. Os campos marcados com * são obrigatórios."}
         </Subtitle>
+        {curso?.imagemCreditoUrl && (
+          <ImageCredit href={curso.imagemCreditoUrl} target="_blank" rel="noreferrer">
+            Foto: {curso.imagemCredito}
+          </ImageCredit>
+        )}
       </Hero>
+
+      {aulas.length > 0 && (
+        <Lessons>
+          <LessonsTitle>As aulas</LessonsTitle>
+          <LessonList>
+            {aulas.map((aula, indice) => (
+              <Lesson key={aula.titulo}>
+                <LessonTitle>
+                  Aula {indice + 1}. {aula.titulo}
+                </LessonTitle>
+                <LessonText>{aula.descricao}</LessonText>
+              </Lesson>
+            ))}
+          </LessonList>
+        </Lessons>
+      )}
 
       <FormSection>
         <Form onSubmit={handleSubmit} noValidate>

@@ -33,6 +33,69 @@ export const Subtitle = styled.p`
   color: ${({ theme }) => theme.colors.text.secondary};
 `;
 
+export const HeroImage = styled.img`
+  width: 100%;
+  height: clamp(180px, 28vw, 280px);
+  object-fit: cover;
+  border-radius: ${({ theme }) => theme.radius.lg};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+`;
+
+export const ImageCredit = styled.a`
+  display: inline-block;
+  margin-top: ${({ theme }) => theme.spacing.sm};
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  color: ${({ theme }) => theme.colors.text.secondary};
+`;
+
+export const Lessons = styled.section`
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: ${({ theme }) => theme.spacing.lg} clamp(20px, 4vw, 36px) 0;
+  box-sizing: border-box;
+`;
+
+export const LessonsTitle = styled.h2`
+  margin: 0 0 ${({ theme }) => theme.spacing.md};
+  font-family: ${({ theme }) => theme.fonts.heading};
+  font-size: ${({ theme }) => theme.fontSizes.lg};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  color: ${({ theme }) => theme.colors.text.heading};
+`;
+
+export const LessonList = styled.ol`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing.sm};
+  margin: 0;
+  padding: 0;
+  list-style: none;
+`;
+
+export const Lesson = styled.li`
+  padding: ${({ theme }) => theme.spacing.md};
+  background: ${({ theme }) => theme.colors.bg.surface};
+  border: 1px solid ${({ theme }) => theme.colors.border.subtle};
+  border-radius: ${({ theme }) => theme.radius.md};
+`;
+
+export const LessonTitle = styled.h3`
+  margin: 0 0 ${({ theme }) => theme.spacing.xxs};
+  font-family: ${({ theme }) => theme.fonts.heading};
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  color: ${({ theme }) => theme.colors.text.heading};
+`;
+
+export const LessonText = styled.p`
+  margin: 0;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  line-height: ${({ theme }) => theme.lineHeights.relaxed};
+  color: ${({ theme }) => theme.colors.text.secondary};
+`;
+
 export const FormSection = styled.section`
   width: min(100%, 760px);
   margin: 0 auto;

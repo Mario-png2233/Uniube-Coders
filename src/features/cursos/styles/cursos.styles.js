@@ -58,11 +58,24 @@ export const Card = styled.article`
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: ${({ theme }) => theme.spacing.lg};
+  overflow: hidden;
   background: ${({ theme }) => theme.colors.surface.base};
   border: 1px solid ${({ theme }) => theme.colors.border.subtle};
   border-radius: ${({ theme }) => theme.radius.lg};
   box-shadow: ${({ theme }) => theme.shadows.sm};
+`;
+
+export const Cover = styled.img`
+  width: 100%;
+  height: 11.5rem;
+  object-fit: cover;
+`;
+
+export const CardBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: ${({ theme }) => theme.spacing.lg};
 
   @media ${({ theme }) => theme.media.down.sm} {
     padding: ${({ theme }) => theme.spacing.md};
