@@ -1,63 +1,49 @@
-// Exemplos do PDF da página de cursos.
-// A lista real (título, vagas, carga e campos extras) ainda depende da coordenação.
+// Números simulados, no porte de turmas pequenas do projeto.
+// A lista de nomes é a oficial. Resumo, público, carga e vagas não vieram da coordenação.
 
 export const cursos = [
   {
-    slug: "logica-de-programacao",
-    titulo: "Lógica de Programação",
+    slug: "educacao-financeira",
+    titulo: "Educação financeira",
     resumo:
-      "Primeiro contato com algoritmos, variáveis, condições e repetições, resolvendo desafios do dia a dia.",
+      "Noções de dinheiro, gastos e planejamento para decisões do dia a dia, sem precisar de conhecimento prévio.",
     publico: "Ensino Fundamental e Médio",
-    cargaHoraria: "20h",
+    cargaHoraria: "12h",
     vagas: 30,
     status: "aberto",
     camposExtras: [],
   },
   {
-    slug: "desenvolvimento-web",
-    titulo: "Desenvolvimento Web",
+    slug: "logica-de-programacao",
+    titulo: "Lógica de programação",
     resumo:
-      "HTML, CSS e JavaScript para criar e publicar a primeira página na internet.",
-    publico: "Ensino Médio",
-    cargaHoraria: "24h",
+      "Primeiro contato com algoritmos, variáveis, condições e repetições, resolvendo problemas simples.",
+    publico: "Ensino Fundamental e Médio",
+    cargaHoraria: "16h",
     vagas: 25,
     status: "aberto",
     camposExtras: [],
   },
   {
-    slug: "maratona-de-programacao",
-    titulo: "Maratona de Programação",
+    slug: "introducao-ao-python",
+    titulo: "Introdução ao Python",
     resumo:
-      "Equipes de até 3 pessoas resolvendo problemas contra o relógio, no formato das maratonas universitárias.",
-    publico: null,
-    cargaHoraria: null,
-    vagas: null,
+      "Primeiros programas em Python: variáveis, decisões e repetição, com exercícios curtos no computador.",
+    publico: "Ensino Médio",
+    cargaHoraria: "20h",
+    vagas: 20,
     status: "aberto",
-    camposExtras: [
-      {
-        name: "equipe",
-        label: "Nome da equipe",
-        type: "text",
-        obrigatorio: true,
-      },
-      {
-        name: "linguagem",
-        label: "Linguagem",
-        type: "select",
-        opcoes: ["C++", "Java"],
-        obrigatorio: true,
-      },
-    ],
+    camposExtras: [],
   },
   {
-    slug: "workshop-de-tecnologia",
-    titulo: "Workshop de Tecnologia",
+    slug: "introducao-a-programacao-web",
+    titulo: "Introdução à programação web",
     resumo:
-      "Encontro curto com convidados da área mostrando como a tecnologia aparece em diferentes profissões.",
-    publico: "Aberto a todos",
-    cargaHoraria: "4h",
-    vagas: null,
-    status: "em-breve",
+      "HTML e CSS para montar e publicar a primeira página, com uma introdução breve ao JavaScript.",
+    publico: "Ensino Médio",
+    cargaHoraria: "20h",
+    vagas: 20,
+    status: "aberto",
     camposExtras: [],
   },
 ];
