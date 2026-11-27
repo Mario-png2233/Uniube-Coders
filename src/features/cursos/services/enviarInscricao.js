@@ -1,24 +1,26 @@
-// Função responsável por enviar os dados do formulário.
-//
-// COMO CONFIGURAR (passo a passo):
-// 1. Acesse https://formspree.io e crie uma conta gratuita.
-// 2. Crie um novo "form" e defina o e-mail que vai RECEBER as inscrições.
-// 3. O Formspree vai te dar uma URL parecida com:
-//        https://formspree.io/f/abcdwxyz
-// 4. Cole essa URL no lugar de "SEU_CODIGO_AQUI" abaixo.
-//
-// Pronto: ao enviar o formulário, a inscrição chega no e-mail configurado.
+// O link real fica em .env.local (não vai para o GitHub) e na Vercel.
+// O modelo do nome da variável está em .env.example.
 
-const ENDPOINT = "https://formspree.io/f/SEU_CODIGO_AQUI";
+const ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT;
 
-export async function enviarInscricao(dados) {
+export async function enviarInscricao(dados, curso) {
+  if (!ENDPOINT) {
+    throw new Error("Falha ao enviar a inscrição.");
+  }
+
+  const titulo = curso?.titulo ?? "";
+
   const resposta = await fetch(ENDPOINT, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
-    body: JSON.stringify(dados),
+    body: JSON.stringify({
+      ...dados,
+      curso: titulo,
+      _subject: `Nova inscrição: ${titulo || "Uniube Coders"}`,
+    }),
   });
 
   if (!resposta.ok) {

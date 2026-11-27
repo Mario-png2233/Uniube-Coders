@@ -140,10 +140,7 @@ function InscricaoForm({ curso = null }) {
 
     try {
       setEnviando(true);
-      await enviarInscricao({
-        ...dados,
-        curso: curso?.titulo ?? "",
-      });
+      await enviarInscricao(dados, curso);
       setFeedback({
         type: "success",
         mensagem:
